@@ -21,7 +21,7 @@ Module.register("MMM-GoogleMapsTraffic", {
         disableDefaultUI: true,
         updateInterval: 900000,
         backgroundColor: 'rgba(0, 0, 0, 0)',
-        markers: []
+        markers: [],
     },
 
     start: function () {
@@ -89,7 +89,6 @@ Module.register("MMM-GoogleMapsTraffic", {
         return wrapper;
     },
 
-
 	initMap: function () {
         console.log("Initializing map...");
         if (!this.config.lat || !this.config.lng) {
@@ -134,8 +133,26 @@ Module.register("MMM-GoogleMapsTraffic", {
 					// mapId: 'DEMO_MAP_ID',
 				});
 				
+				// const trafficLayer = new google.maps.TrafficLayer();
+				// trafficLayer.setMap(map);
+
+				// this.trafficLayer = new google.maps.TrafficLayer();
+				// this.trafficLayer.setMap(null);
+				// this.trafficLayer.setMap(map);
+
 				const trafficLayer = new google.maps.TrafficLayer();
 				trafficLayer.setMap(map);
+
+				setInterval(
+					() => {
+						const trafficLayer = new google.maps.TrafficLayer();
+						trafficLayer.setMap(null);
+						trafficLayer.setMap(map);
+						console.log("TrafficLayer Updated");
+					},
+					10 * 60 * 1000
+				);
+
 
 				// if (this.config.markers && Array.isArray(this.config.markers)) {
 
