@@ -5,6 +5,10 @@
   "main": "MMM-GoogleMapsTraffic.js",
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogelinas/MMM-GoogleMapsTraffic.git"
+  }
   "devDependencies": {
     "grunt": "latest",
     "grunt-eslint": "latest",
