@@ -150,7 +150,7 @@ Module.register("MMM-GoogleMapsTraffic", {
 						trafficLayer.setMap(map);
 						console.log("TrafficLayer Updated");
 					},
-					10 * 60 * 1000
+					15 * 60 * 1000
 				);
 
 
